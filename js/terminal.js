@@ -1,6 +1,5 @@
 const output = document.getElementById("output");
 const typeSound = document.getElementById("type-sound");
-const bgMusic = document.getElementById("bg-music");
 
 const lines = [
   "Accessing system...",
@@ -36,8 +35,6 @@ async function typeLines() {
 window.onload = () => {
   document.body.addEventListener('click', () => {
     output.innerHTML = '';
-    bgMusic.volume = 0.5;
-    bgMusic.play();
     typeLines();
   }, { once: true });
 };

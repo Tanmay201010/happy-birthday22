@@ -8,6 +8,8 @@ const lines = [
   "Done."
 ];
 
+let stopSound = false;
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -15,7 +17,7 @@ function sleep(ms) {
 async function typeLines() {
   for (const line of lines) {
     for (const char of line) {
-      if (char !== ' ') {
+      if (char !== ' ' && !stopSound) {
         typeSound.currentTime = 0;
         typeSound.play();
       }
@@ -26,12 +28,13 @@ async function typeLines() {
     output.innerHTML += '\n';
     await sleep(500);
   }
-  await sleep(500);
 
-  // 🔇 Stop the typing sound as we reveal the video
+  // Stop sound immediately and prevent further playing
+  stopSound = true;
   typeSound.pause();
   typeSound.currentTime = 0;
 
+  await sleep(500);
   videoContainer.style.display = "block";
 }
 

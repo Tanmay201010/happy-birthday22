@@ -27,6 +27,11 @@ async function typeLines() {
     await sleep(500);
   }
   await sleep(500);
+
+  // 🔇 Stop the typing sound as we reveal the video
+  typeSound.pause();
+  typeSound.currentTime = 0;
+
   videoContainer.style.display = "block";
 }
 

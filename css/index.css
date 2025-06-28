@@ -13,7 +13,6 @@ body {
 #terminal {
   width: 90%;
   max-width: 1000px;
-  height: 90%;
   background-color: black;
   overflow-y: auto;
   white-space: pre-wrap;
@@ -21,16 +20,6 @@ body {
   line-height: 1.8rem;
   padding: 20px;
   color: #33ff33;
-  animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 ::-webkit-scrollbar {
